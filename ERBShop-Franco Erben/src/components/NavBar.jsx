@@ -14,13 +14,13 @@ return(
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"><ItemListContainer texto="Grow " ></ItemListContainer></a>
+              <a class="nav-link active" aria-current="page" href="#">Grow</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active " href="#"><ItemListContainer texto="Tabacos"></ItemListContainer></a>
+              <a class="nav-link active " href="#">Tabacos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#"><ItemListContainer texto="Bandejas"></ItemListContainer></a>
+              <a class="nav-link active" href="#">Bandejas</a>
             </li>
           </ul>
         </div>        
