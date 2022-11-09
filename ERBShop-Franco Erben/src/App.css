@@ -1,4 +1,110 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400&display=swap");
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+color: black; }
+  
+
 .contador{
   border-radius: 2cm;
   background-color: red;
+  
+}
+.cantidad{
+  font-size: 15px;
+}
+.icons{
+ width: 0.5cm;
+ padding: 1px;
+ margin: 3px;
+}
+
+.Itemcount{
+  display: flex;
+  justify-content: space-between;
+
+  
+  margin: 15px;
+  width: 6cm;
+  height: auto;
+}
+.boton{
+  background-color: white;
+  
+}
+.agregar{
+text-decoration: none;
+ background-color: white;
+ text-align: center;
+ 
+}
+.ItemsCount{
+  display: flex;
+  justify-content: center;
+  
+    
+}
+.agregarCarrito{
+  display: flex;
+
+}
+.Carrito{
+  
+  text-align: center;
+}
+.producto-container :hover{
+ 
+}
+.producto-container{
+  
+ padding:0;
+ display: inline-block;
+margin-top: 20px;
+margin-bottom: 20px;
+ margin : 80px;
+  
+}
+.producto-img{
+  padding: 1;
+  width: 5cm;
+  display: flex;
+  justify-content: center;
+
+}
+.producto-titulo{
+  display: flex;
+  font-size: medium;
+}
+.producto-info{
+  text-align: center;
+}
+.producto-descripcion{
+  padding: 10px;
+  
+}
+.producto-price{
+  font-size: large;
+}
+.detail-container{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+.detail-img{
+width:15cm;
+
+}
+.detail-description{
+  margin-top: 3cm;
+  margin-left: 5cm;
+ font-size: 20px;
+}
+.detail-price{
+  text-align: center;
+  font-size: 30px;
+}
+.detail-titulo{
+  font-size: 50px
 }
