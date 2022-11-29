@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
 const ItemDetailContainer = () =>{
-
+    
     const[detalles,setDetalles]=useState([{}])
     const {idItem }= useParams()
 
@@ -24,8 +24,8 @@ const ItemDetailContainer = () =>{
     thumbnail={detalles.thumbnail}
     description={detalles.description}
     id= {detalles.id}
-    price={detalles.price}  />
-    <ItemCount/>
+    price={detalles.price} 
+    stock={detalles.stock} />
     
     
     </>)

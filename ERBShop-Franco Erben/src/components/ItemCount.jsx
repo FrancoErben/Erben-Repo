@@ -1,28 +1,44 @@
 
-import { useState } from 'react';
+import { buttom } from 'bootstrap';
+import { useEffect, useState } from 'react';
 import '../App.css'
 
-const ItemCount = ()=>{
+const ItemCount = ({ stock = 0 , initial = 0, onAdd})=>{
+    
 const [cantidad, setCantidad]= useState(0);
+useEffect(()=>{
+    setCantidad(initial)
+},[]);
+
+
 const Menos = () =>{
-setCantidad(cantidad-1)
+if(cantidad> initial+1){
+    setCantidad(cantidad-1)
 } 
-const Mas = () =>{
-    setCantidad(cantidad+1)
-}
+const Mas = () =>{  
+    if (cantidad < stock) {setCantidad(cantidad+1)
+}}
 
 return(<>
 <div className='ItemsCount'>
  <div className='Itemcount border border-2 border-dark   '>
-     <button className='border-0 boton' onClick={Menos}><img  className="icons border-0" src="https://cdn-icons-png.flaticon.com/128/6998/6998808.png" alt=""  /></button>
+     <buttom variant="text" className='border-0 boton' onClick={Menos}><img  className="icons border-0" src="https://cdn-icons-png.flaticon.com/128/6998/6998808.png" alt=""  /></buttom>
      <span className='cantidad p-3'>{cantidad}</span>
-     <button  className='border-0 boton' onClick={Mas}><img  className="icons " src="https://cdn-icons-png.flaticon.com/128/748/748113.png" alt="" /></button>
+     <buttom variant="text" className='border-0 boton' onClick={Mas}><img  className="icons " src="https://cdn-icons-png.flaticon.com/128/748/748113.png" alt="" /></buttom>
  </div>
-       <button className='agregar border-0'><p className=' Carrito border  border-dark p-1 mt-3 '>Agregar al carrito</p></button>
+ 
+      {
+        stock && cantidad 
+        ?<buttom variant="contained" className='agregar  Carrito border  border-dark p-1 mt-3  '  onClick={()=> onAdd(cantidad)}>Agregar al carrito</buttom>
+        : <buttom variant="contained" className='agregar   Carrito border  border-dark p-1 mt-3 ' disabled >Agregar al carrito</buttom>
+      } 
+
 </div>
 </>
 )
 
 
+}
 };
 export default ItemCount
+
