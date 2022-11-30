@@ -2,14 +2,18 @@ import { buttom } from "bootstrap";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import Swal from "sweetalert2";
 const ItemDetail = (props) =>{
-   const[itemCount , setItemCount]= useState(0);
-   const onAdd =(qty) =>{
-    alert("Seleccionaste " + qty + "unidades");
-    setItemCount(qty)
-    setEstadoCompra(true)
-}
-const [ estadoCompra , setEstadoCompra ] = useState (false)
+    
+    const[itemCount , setItemCount]= useState(0);
+    const [ estadoCompra , setEstadoCompra ] = useState (false)
+    const onAdd =(qty) =>{
+       Swal.fire('Seleccionaste ' + qty + ' unidades');
+     setItemCount(qty)
+     setEstadoCompra(true)
+ }
+ 
+ 
 
     return(
         <>
@@ -28,20 +32,16 @@ const [ estadoCompra , setEstadoCompra ] = useState (false)
        
 
         </div>
+          <div className="containerBoton">
           {
-            itemCount
-            ? <ItemCount stock={props.stock} initial={itemCount} onAdd={onAdd}/>
-            : <Link to='/cart' > <buttom >Comprar</buttom></Link>
-            
-          }
-          {
-            estadoCompra
-            ? <ItemCount onAdd={onAdd}/>
-            : <Link to='/cart' > <buttom >Comprar</buttom></Link> 
+              !estadoCompra
+              ? <ItemCount  stock={props.stock} initial={itemCount} onAdd={onAdd}/>
+              : <Link to='/cart' style={{textDecoration: "none"}}> <buttom  className='comprar p-2 border border-primary   '>Comprar</buttom></Link>
 
-          }
+          }</div>
         </>
     )
+   
 }
 
 export default ItemDetail
