@@ -25,7 +25,7 @@ return(
             </li>
           </ul>
         </div>        
-        <CartWidget classname="text-end" ></CartWidget>
+       <Link to='/cart' style={{textDecoration:"none"}}> <CartWidget classname="text-end" ></CartWidget></Link>
       </div>
 </nav>
     

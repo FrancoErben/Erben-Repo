@@ -121,3 +121,64 @@ width:15cm;
   display: flex;
   justify-content: center;
 }
+.cart-img{
+width: 250px;
+padding-top:1c;
+
+}
+.title{
+  text-align: start;
+  
+}.cart-container{
+  display: block;
+}
+
+.cart-container2{
+  text-align: end
+ 
+;
+}
+.cart-button-product{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.cart-button-container{
+  display: flex;
+  justify-content: flex-end;
+ 
+}
+.end{
+  text-align: end;
+}
+.buttonx{
+  
+  background-color: black;
+  color: white;
+}
+
+.title-cart-principal{
+  text-align: center;
+  
+}
+.borrar{
+  text-align: end;
+  background-color: black;
+  color: white;
+}
+.start{
+  text-align: start;
+}
+.vacio{
+  text-align: center;
+  font-size: 2cm;
+  margin: 5cm;
+}
+.total-Container{
+  display: block;
+  text-align: center
+}
+.price-button{
+  text-align: center;
+ 
+}

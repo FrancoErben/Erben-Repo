@@ -1,16 +1,18 @@
 import { buttom } from "bootstrap";
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import Swal from "sweetalert2";
+import { CartContext } from "./CartContext";
 const ItemDetail = (props) =>{
-    
+    const{addToCart}= useContext(CartContext)
     const[itemCount , setItemCount]= useState(0);
     const [ estadoCompra , setEstadoCompra ] = useState (false)
     const onAdd =(qty) =>{
        Swal.fire('Seleccionaste ' + qty + ' unidades');
      setItemCount(qty)
      setEstadoCompra(true)
+     addToCart(props,qty)
  }
  
  
