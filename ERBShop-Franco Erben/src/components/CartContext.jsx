@@ -10,7 +10,7 @@ const CartContextProvider = (props )=> {
     const [cartList,setCartList] = useState([])
 const addToCart=(props , qty)=>{
     let found = cartList.find(product=>product.id===props.id)
-    if(found===undefined){
+    if(!found){
     setCartList([...cartList,
         {id: props.id,
         title: props.title,
@@ -20,7 +20,8 @@ const addToCart=(props , qty)=>{
        img: props.thumbnail  }])
 
         }else{
-            found.qty+=qty;
+            setCartList([...cartList, {...found, qty: qty+qty}])
+
             
         }}
 const clear = ()=> {
@@ -35,9 +36,8 @@ const calcTotalPerItem = (id) => {
     return cartList[index].price * cartList[index].qty;
 }
 const calcItemsQty = () => {
-    let qtys = cartList.map(props => props.qty);
-    return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
-}
+    return cartList.reduce((acc, prod) => acc += prod.qty,0)
+  }
 const calcTotal = () => {
     let totalPerItem = cartList.map(props => calcTotalPerItem(props.id));
     return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue);

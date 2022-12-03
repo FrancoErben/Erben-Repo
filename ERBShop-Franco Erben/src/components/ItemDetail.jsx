@@ -38,7 +38,10 @@ const ItemDetail = (props) =>{
           {
               !estadoCompra
               ? <ItemCount  stock={props.stock} initial={itemCount} onAdd={onAdd}/>
-              : <Link to='/cart' style={{textDecoration: "none"}}> <buttom  className='comprar p-2 border border-primary   '>Comprar</buttom></Link>
+              : <div className="Compra ">
+                <Link to='/cart' style={{textDecoration: "none"}}> <buttom  className='comprar p-2 border border-primary   '>Comprar</buttom></Link>
+                <Link to='/'><button className="m-2 buttonx">Seguir comprando </button></Link>
+              </div>
 
           }</div>
         </>

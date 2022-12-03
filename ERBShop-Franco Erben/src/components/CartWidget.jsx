@@ -8,11 +8,11 @@ import { CartContext } from './CartContext';
 import SimpleBadge from './Notificacion';
 import BadgeOverlap from './Notificacion';
 const CartWidget = ()=>{
-    const CartW = useContext(CartContext)
+    const {calcItemsQty} = useContext(CartContext)
     return(
     < >
     <div>
-    <Badge badgeContent={CartW.calcItemsQty()} color="primary">
+    <Badge badgeContent={calcItemsQty()} color="primary">
       <ShoppingCartOutlinedIcon color="action" />
     </Badge>
     

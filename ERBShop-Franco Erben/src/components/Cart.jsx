@@ -1,11 +1,17 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 const Cart = () => {
     const  { cartList ,clear ,borrarItem,nuevaLista,qyt,calcTotal,calcTotalPerItem}=useContext(CartContext)
     return (
         <>
-            <h1 className="title-cart-principal m-2">Carrito</h1>
+               
+               
+               <Link to='/'><button className="m-3 buttonx" >Seguir comprando</button></Link>
+                <h1 className="title-cart-principal m-2">Carrito</h1>  
+               
+           
             {
               cartList.length > 0 && 
               <div>
@@ -21,17 +27,17 @@ const Cart = () => {
              : cartList.map (props => 
                <div >
                    
-                 <div className="cart-container border rounded border-primary m-1 ">
-                  <div className="title">
+                 <div className="cart-container border rounded border-primary m-1  ">
+                  <div className="title cart-container ">
                 
                    <img className="cart-img pt-4" src={props.img} alt=""></img>
                    <h2 className="car-title">{props.title}</h2>
                   
                       </div>
-                   <div className="start  ">
+                   <div className="  ">
                       <div className="p-2"> <h3 className="cart-price ">$ {calcTotalPerItem(props.id)} </h3>
-                      <span className="cart-qty">X{props.qty} unidades</span></div>
-                      <div className="p-2 end"><button className=" buttonx" onClick={() => borrarItem(props.id)} >Eliminar producto</button></div>
+                      <span className="cart-qty">X{props.qty} unidades</span>
+                      <div className="p-2 end"><button className=" buttonx" onClick={() => borrarItem(props.id)} >Eliminar producto</button></div></div>
                       </div>        
                     </div> 
 
