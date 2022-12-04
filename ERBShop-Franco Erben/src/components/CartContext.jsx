@@ -26,7 +26,8 @@ const CartContextProvider = (props )=> {
                     price: props.price,
                       qty:qty,
                    img: props.thumbnail  }])
-            }}
+            }
+}
 const clear = ()=> {
     setCartList([])
 }
