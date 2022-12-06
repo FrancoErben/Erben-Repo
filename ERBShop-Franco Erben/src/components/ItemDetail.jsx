@@ -1,4 +1,4 @@
-import { buttom } from "bootstrap";
+
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
@@ -39,7 +39,7 @@ const ItemDetail = (props) =>{
               !estadoCompra
               ? <ItemCount  stock={props.stock} initial={itemCount} onAdd={onAdd}/>
               : <div className="Compra ">
-                <Link to='/cart' style={{textDecoration: "none"}}> <buttom  className='comprar p-2 border border-primary   '>Comprar</buttom></Link>
+                <Link to='/cart' style={{textDecoration: "none"}}> <button  className='comprar p-2 border border-primary   '>Comprar</button></Link>
                 <Link to='/'><button className="m-2 buttonx">Seguir comprando </button></Link>
               </div>
 

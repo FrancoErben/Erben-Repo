@@ -5,15 +5,17 @@ import { useState } from "react";
 import { useEffect } from "react";
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
+import { firestoneFetchOne } from "../utils/firestoreUtils";
 const ItemDetailContainer = () =>{
     
     const[detalles,setDetalles]=useState([{}])
     const {idItem }= useParams()
 
     useEffect(() => {
-        CustomFetch(2000, productos.find(props => props.id === parseInt(idItem)))
-            .then(result => setDetalles(result))
-            .catch(err => console.log(err))
+        firestoneFetchOne(idItem)
+       .then(response=>setDetalles(response))
+       .catch(err=>console.log(err))
+
     }, []);
     
     return(<>

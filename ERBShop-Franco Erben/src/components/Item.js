@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom"
-import { productos } from "../utils/Producto"
-import ItemListContainer from "./ItemListContainer"
+
 
 const Item =(props)=>{
     return(<>

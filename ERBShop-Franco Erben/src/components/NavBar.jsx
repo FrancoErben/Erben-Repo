@@ -1,5 +1,4 @@
 import CartWidget from "./CartWidget"
-import ItemListContainer from "./ItemListContainer"
 import '../App.css'
 import { Link } from 'react-router-dom'
 import { MenuItem } from "@mui/material"
